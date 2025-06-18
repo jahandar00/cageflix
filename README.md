@@ -1,63 +1,97 @@
 #  Cageflix – A Nicolas Cage Movie Library
 
-Cageflix is a Netflix-style movie library showcasing the cinematic legacy of Nicolas Cage. Built as a case study project for Trivago’s Student Systems Engineer role, this application demonstrates full-stack capabilities using a MERN-style architecture with a strong focus on responsive frontend design and fuzzy search integration.
+**Cageflix** is a movie library showcasing the cinematic legacy of Nicolas Cage. Built as a case study project for Trivago’s Student Systems Engineer role, this application demonstrates full-stack capabilities using a MERN-style architecture with a focus on frontend design and fuzzy search integration.
+
+The IMDb datasets are used as the primary source of movie data. The backend parses and filters them to only include Nicolas Cage's works, which are then served via the /api/movies endpoint. 
+
+While the primary dataset was sourced from IMDb, some data (such as movie poster, plot, runtime, actors) was missing or incomplete. To enhance the accuracy and user experience, supplementary data was fetched from the OMDb API.
+
 
 ---
 
 ##  Features
 
--  **Fuzzy Search** for movies by title, genre, actors, or description  
--  **Nicolas Cage-centric library** using IMDb datasets  
--  **Responsive Design** – works seamlessly across devices  
--  **REST API Backend** using Express & MongoDB  
--  **Modern Frontend** with React, Vite, and Material UI  
+-  Clean, modular backend (Express.js + MongoDB)
+-  IMDb dataset parsing using Node.js streams
+-  OMDb API integration for enriched movie details
+-  Fuzzy search by title, description, genre, or actors (Fuse.js)
+-  Frontend built with Vite + React + SCSS modules
+-  Responsive UI with movie previews, search results, and detail pages
 
 ---
 
-##  Tech Stack
 
-### Frontend
-- **React 18** with Vite for fast development  
-- **React Router DOM** for routing  
-- **Material UI + Emotion** for UI components and styling  
-- **Fuse.js** for fuzzy search  
-- **SASS** for custom styling  
+##  Technologies Used
 
 ### Backend
-- **Node.js** with **Express 5**  
-- **MongoDB** with **Mongoose**  
-- **dotenv** for environment configuration  
-- **Axios** for HTTP requests  
-- **Nodemon** for development server  
+- Node.js
+- Express.js
+- MongoDB + Mongoose
+- OMDb API
+- IMDb Datasets (`.tsv` parsing with `fs` and `readline`)
+- dotenv, cors
 
+### Frontend
+- React.js
+- React Router DOM
+- Fuse.js (fuzzy search)
+- Sass (SCSS modules)
+- Material UI Icons
+- Responsive flexbox layout
 
 ---
 
-##  Setup Instructions
+##  Dataset Usage
 
+- IMDb `name.basics.tsv`, `title.principals.tsv`, and `title.basics.tsv` were parsed to extract **all movies involving Nicolas Cage**.
+- Duplicate entries are automatically detected and ignored to ensure a clean dataset.
+- These were cross-referenced and enriched with data from the [OMDb API](https://www.omdbapi.com/).
+- Final data was stored in MongoDB and accessed through a REST API.
 
-1. Clone the Repository
+---
+
+##  Fuzzy Search
+
+Implemented using `Fuse.js`, enabling users to search for Nicolas Cage movies by:
+- Title
+- Genre
+- Description
+- Actor names
+
+This supports partial matches and typo tolerance — e.g., "triller" → "Thriller".
+
+---
+
+##  Installation Instructions
 
 ```bash
-git clone https://github.com/your-username/cageflix.git
-cd cageflix-main
+### 1. Clone the repo
+git clone https://github.com/yourusername/cageflix.git
+cd cageflix
 
-2. Backend Setup (API)
+### 2. Backend Setup
 cd api
 npm install
-# Create a .env file with your MongoDB connection
-echo "MONGO_URL=mongodb+srv://<username>:<password>@cluster.mongodb.net/cageflix" > .env
-npm start
+touch .env
+# Add your MongoDB connection string:
+# MONGO_URL=mongodb+srv://<user>:<pass>@cluster.mongodb.net/cageflix
+node index.js
 
-3. Frontend Setup (Client)
-cd ../client
+### 3. Frontend Setup
+cd client
 npm install
 npm run dev
 
+```
 
-Access the frontend: http://localhost:5173
+Frontend runs on http://localhost:5173
+Backend runs on http://localhost:8800
 
-Backend API: http://localhost:8800
 
+##  Contact
 
-The IMDb datasets are used as the primary source of movie data. The backend parses and filters them to only include Nicolas Cage's works, which are then served via the /api/movies endpoint.
+Made by **Jahandar Hakhiyev**  
+For **Trivago Fullstack Student Engineer Case Study – 2025**
+
+ Email: [axiyev.cahandar@gmail.com]  
+ GitHub: [https://github.com/jahandar00](https://github.com/jahandar00)
