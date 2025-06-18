@@ -1,4 +1,4 @@
-# 🎬 Cageflix – A Nicolas Cage Movie Library
+#  Cageflix – A Nicolas Cage Movie Library
 
 Cageflix is a Netflix-style movie library showcasing the cinematic legacy of Nicolas Cage. Built as a case study project for Trivago’s Student Systems Engineer role, this application demonstrates full-stack capabilities using a MERN-style architecture with a strong focus on responsive frontend design and fuzzy search integration.
 
@@ -30,13 +30,13 @@ Cageflix is a Netflix-style movie library showcasing the cinematic legacy of Nic
 - **Axios** for HTTP requests  
 - **Nodemon** for development server  
 
----
 
 ---
 
 ##  Setup Instructions
 
-### 1. Clone the Repository
+
+1. Clone the Repository
 
 ```bash
 git clone https://github.com/your-username/cageflix.git
@@ -58,5 +58,6 @@ npm run dev
 Access the frontend: http://localhost:5173
 
 Backend API: http://localhost:8800
+
 
 The IMDb datasets are used as the primary source of movie data. The backend parses and filters them to only include Nicolas Cage's works, which are then served via the /api/movies endpoint.
