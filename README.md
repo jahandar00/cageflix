@@ -66,7 +66,7 @@ This supports partial matches and typo tolerance — e.g., "triller" → "Thrill
 
 ```bash
 ### 1. Clone the repo
-git clone https://github.com/yourusername/cageflix.git
+git clone https://github.com/jahandar00/cageflix.git
 cd cageflix
 
 ### 2. Backend Setup
