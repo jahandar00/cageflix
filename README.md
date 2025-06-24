@@ -1,6 +1,6 @@
 #  Cageflix – A Nicolas Cage Movie Library
 
-**Cageflix** is a movie library showcasing the cinematic legacy of Nicolas Cage. Built as a case study project for Trivago’s Student Systems Engineer role, this application demonstrates full-stack capabilities using a MERN-style architecture with a focus on frontend design and fuzzy search integration.
+**Cageflix** is a movie library showcasing the cinematic legacy of Nicolas Cage. This application demonstrates full-stack capabilities using a MERN-style architecture with a focus on frontend design and fuzzy search integration.
 
 The IMDb datasets are used as the primary source of movie data. The backend parses and filters them to only include Nicolas Cage's works, which are then served via the /api/movies endpoint. 
 
